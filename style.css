@@ -82,13 +82,20 @@ nav .cancel-btn {
 /* ===== HOME ===== */
 
 .home {
-  height: 100vh;
-  width: 100%;
-  background: url('background.png') no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  font-family: 'Ubuntu', sans-serif;
+  height: 100vh !important;
+  min-height: 100vh !important;
+
+  background-image: url('background.png') !important;
+  background-repeat: no-repeat !important;
+
+  background-size: auto 100% !important;
+
+  /* Move the original image slightly toward the center */
+  background-position: 60% center !important;
+
+  background-attachment: scroll !important;
+
+  position: relative !important;
 }
 
 .home .home-content {
