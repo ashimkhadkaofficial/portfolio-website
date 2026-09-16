@@ -29,7 +29,11 @@
   background: #4070f4;
 }
 
-/* Navbar Styling */
+
+/* =========================
+   NAVBAR
+========================= */
+
 nav {
   position: fixed;
   width: 100%;
@@ -92,17 +96,37 @@ nav.sticky .menu a:hover {
   color: #0E2431;
 }
 
+
+/* Social Media Icons */
+.navbar .media-icons {
+  display: flex;
+  align-items: center;
+}
+
 .navbar .media-icons a {
   color: #4070f4;
   font-size: 18px;
   margin: 0 6px;
+  transition: all 0.3s ease;
+}
+
+.navbar .media-icons a:hover {
+  color: #0E2431;
 }
 
 nav.sticky .media-icons a {
   color: #fff;
 }
 
-/* Side Navigation Menu Button CSS */
+nav.sticky .media-icons a:hover {
+  color: #0E2431;
+}
+
+
+/* =========================
+   MENU BUTTON
+========================= */
+
 nav .menu-btn,
 .navbar .menu .cancel-btn {
   position: absolute;
@@ -123,11 +147,15 @@ nav.sticky .menu-btn {
   color: #fff;
 }
 
-.navbar .menu .menu-btn {
+.navbar .menu .cancel-btn {
   color: #fff;
 }
 
-/* Home Section Styling */
+
+/* =========================
+   HOME SECTION
+========================= */
+
 .home {
   height: 100vh;
   width: 100%;
@@ -194,7 +222,11 @@ nav.sticky .menu-btn {
   color: #4070f4;
 }
 
-/* About Section Styling */
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
 section {
   padding-top: 40px;
 }
@@ -203,12 +235,6 @@ section .content {
   width: 80%;
   margin: 40px auto;
   font-family: 'Poppins', sans-serif;
-}
-
-.about .about-details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 section .title {
@@ -243,31 +269,11 @@ section .title span::after {
   transform: translateX(-50%);
 }
 
-.about .about-details .left {
-  width: 45%;
-}
-
-.about .left img {
-  height: 400px;
-  width: 400px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-.about-details .right {
-  width: 55%;
-}
-
 section .topic {
   color: #0E2431;
   font-size: 25px;
   font-weight: 500;
   margin-bottom: 10px;
-}
-
-.about-details .right p {
-  text-align: justify;
-  color: #0E2431;
 }
 
 section .button {
@@ -293,7 +299,42 @@ section .button button:hover {
   color: #4070f4;
 }
 
-/* My Skills CSS */
+
+/* =========================
+   ABOUT
+========================= */
+
+.about .about-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about .about-details .left {
+  width: 45%;
+}
+
+.about .left img {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.about-details .right {
+  width: 55%;
+}
+
+.about-details .right p {
+  text-align: justify;
+  color: #0E2431;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
 .skills {
   background: #F0F8FF;
 }
@@ -333,7 +374,6 @@ section .button button:hover {
   margin-left: 20px;
   font-size: 18px;
   font-weight: 500;
-  margin: 0 6px;
 }
 
 .skills-details .boxes {
@@ -358,7 +398,11 @@ section .button button:hover {
   color: #4070f4;
 }
 
-/* My Services CSS */
+
+/* =========================
+   SERVICES
+========================= */
+
 .services .boxes {
   display: flex;
   flex-wrap: wrap;
@@ -394,7 +438,7 @@ section .button button:hover {
   transition: all 0.4s ease;
 }
 
-.boxes .box:hover .icon {
+.services .boxes .box:hover .icon {
   background-color: #fff;
   color: #4070f4;
 }
@@ -405,7 +449,11 @@ section .button button:hover {
   transition: all 0.4s ease;
 }
 
-/* Contact Me CSS */
+
+/* =========================
+   CONTACT
+========================= */
+
 .contact {
   background: #F0F8FF;
 }
@@ -421,7 +469,11 @@ section .button button:hover {
   margin: auto;
 }
 
-/* Footer CSS */
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
   background: #4070f4;
   padding: 15px 0;
@@ -444,7 +496,11 @@ footer .text span a:hover {
   text-decoration: underline;
 }
 
-/* Scroll To Top Button CSS */
+
+/* =========================
+   SCROLL TO TOP
+========================= */
+
 .scroll-button a {
   position: fixed;
   bottom: 20px;
@@ -458,14 +514,25 @@ footer .text span a:hover {
   display: none;
 }
 
-/* Responsive Media Query */
+
+/* =========================
+   RESPONSIVE 1190px
+========================= */
+
 @media (max-width: 1190px) {
+
   section .content {
     width: 85%;
   }
 }
 
+
+/* =========================
+   RESPONSIVE 1000px
+========================= */
+
 @media (max-width: 1000px) {
+
   .about .about-details {
     justify-content: center;
     flex-direction: column;
@@ -488,18 +555,32 @@ footer .text span a:hover {
   }
 }
 
+
+/* =========================
+   RESPONSIVE 900px
+========================= */
+
 @media (max-width: 900px) {
+
   .about .left img {
     height: 350px;
     width: 350px;
   }
 }
 
+
+/* =========================
+   RESPONSIVE 750px
+========================= */
+
 @media (max-width: 750px) {
+
+  /* Navbar */
   nav .navbar {
     width: 90%;
   }
 
+  /* Mobile navigation menu */
   nav .navbar .menu {
     position: fixed;
     left: -100%;
@@ -529,22 +610,81 @@ footer .text span a:hover {
     color: #4070f4;
   }
 
+
+  /* =========================
+     MOBILE SOCIAL ICONS
+  ========================= */
+
   nav .navbar .media-icons {
-    display: none;
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    right: 60px;
+    top: 27px;
   }
+
+  nav .navbar .media-icons a {
+    color: #4070f4;
+    font-size: 17px;
+    margin: 0 4px;
+  }
+
+  nav.sticky .media-icons a {
+    color: #fff;
+  }
+
+
+  /* =========================
+     MOBILE MENU BUTTON
+  ========================= */
 
   nav .menu-btn,
   .navbar .menu .cancel-btn {
     display: block;
   }
 
+  nav .menu-btn {
+    right: 20px;
+    top: 27px;
+  }
+
+
+  /* =========================
+     HOME MOBILE
+  ========================= */
+
+  .home .home-content {
+    width: 90%;
+    height: 100%;
+    justify-content: center;
+
+    /* Move content below Portfolio logo */
+    transform: translateY(55px);
+  }
+
+  .home .text-one {
+    font-size: 22px;
+  }
+
   .home .text-two {
     font-size: 65px;
+    line-height: 1.15;
   }
 
   .home .text-three {
     font-size: 35px;
+    line-height: 1.2;
   }
+
+  .home .text-four {
+    font-size: 23px;
+  }
+
+
+  /* =========================
+     SKILLS MOBILE
+  ========================= */
 
   .skills .skills-details {
     align-items: center;
@@ -563,60 +703,93 @@ footer .text span a:hover {
     width: 100%;
   }
 
+
+  /* =========================
+     SERVICES MOBILE
+  ========================= */
+
   .services .boxes .box {
     margin: 20px 0;
     width: 100%;
   }
+
+
+  /* =========================
+     CONTACT MOBILE
+  ========================= */
 
   .contact .text {
     width: 100%;
   }
 }
 
-/* Mobile */
+
+/* =========================
+   RESPONSIVE 600px
+========================= */
+
 @media (max-width: 600px) {
 
+  /* Home background */
   .home {
     height: 100vh;
     min-height: 100vh;
+
     background-image: url("background.png");
     background-repeat: no-repeat;
 
     /*
-      Important:
-      Show the image based on its height instead of
-      using cover, which crops too much on phones.
+      Using auto 100% keeps the person visible
+      on tall mobile screens.
     */
     background-size: auto 100%;
+
+    /* Person is on the right side */
     background-position: right center;
+
+    /* Better mobile browser compatibility */
     background-attachment: scroll;
   }
 
+
+  /* Home content */
   .home .home-content {
     width: 90%;
     height: 100%;
-    justify-content: center;
+
+    /* Keep Hello separate from Portfolio */
+    transform: translateY(55px);
   }
 
+
+  /* Hello */
   .home .text-one {
     font-size: 22px;
   }
 
+
+  /* Name */
   .home .text-two {
     font-size: 52px;
     line-height: 1.15;
   }
 
+
+  /* Job title */
   .home .text-three {
     font-size: 30px;
     line-height: 1.2;
     margin: 5px 0;
   }
 
+
+  /* From Nepal */
   .home .text-four {
     font-size: 21px;
   }
 
+
+  /* Hire Me */
   .home .button {
     margin: 14px 0;
   }
@@ -626,6 +799,8 @@ footer .text span a:hover {
     padding: 8px 16px;
   }
 
+
+  /* Skills percentage */
   .skills-details .boxes .per {
     font-size: 50px;
     color: #4070f4;
