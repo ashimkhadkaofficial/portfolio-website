@@ -1,3 +1,4 @@
+/* Google Font CDN Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 
 * {
@@ -8,33 +9,56 @@
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
+/* Custom Scroll Bar CSS */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-/* ===== NAVBAR ===== */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
 
+::-webkit-scrollbar-thumb {
+  background: #6e93f7;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4070f4;
+}
+
+/* navbar styling */
 nav {
   position: fixed;
   width: 100%;
   padding: 20px 0;
-  z-index: 9999;
-  transition: all 0.4s ease;
+  z-index: 998;
+  transition: all 0.3s ease;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+nav.sticky {
+  background: #4070f4;
+  padding: 13px 0;
 }
 
 nav .navbar {
   width: 90%;
-  margin: auto;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  margin: auto;
 }
 
 nav .navbar .logo a {
+  font-weight: 500;
   font-size: 35px;
-  font-weight: 600;
   color: #4070f4;
+}
+
+nav.sticky .navbar .logo a {
+  color: #fff;
 }
 
 nav .navbar .menu {
@@ -44,10 +68,10 @@ nav .navbar .menu {
 
 nav .navbar .menu li {
   list-style: none;
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
-nav .navbar .menu li a {
+.navbar .menu a {
   font-size: 18px;
   font-weight: 500;
   color: #0E2431;
@@ -55,36 +79,58 @@ nav .navbar .menu li a {
   transition: all 0.4s ease;
 }
 
-nav .navbar .menu li a:hover {
+.navbar .menu a:hover {
   color: #4070f4;
 }
 
-nav .media-icons {
-  display: flex;
-  align-items: center;
+nav.sticky .menu a {
+  color: #FFF;
 }
 
-nav .media-icons a {
+nav.sticky .menu a:hover {
+  color: #0E2431;
+}
+
+.navbar .media-icons a {
   color: #4070f4;
   font-size: 18px;
   margin: 0 6px;
 }
 
-nav .media-icons a:hover {
-  color: #0E2431;
+nav.sticky .media-icons a {
+  color: #FFF;
 }
 
+/* Side Navigation Menu Button CSS */
 nav .menu-btn,
-nav .cancel-btn {
+.navbar .menu .cancel-btn {
+  position: absolute;
+  color: #fff;
+  right: 30px;
+  top: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
   display: none;
 }
 
-/* ===== HOME ===== */
+nav .menu-btn {
+  color: #4070f4;
+}
 
+nav.sticky .menu-btn {
+  color: #FFF;
+}
+
+.navbar .menu .menu-btn {
+  color: #fff;
+}
+
+/* home section styling */
 .home {
   height: 100vh;
   width: 100%;
-  background: url('background.png') no-repeat;
+  background: url("background.png") no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -130,24 +176,26 @@ nav .cancel-btn {
 
 .home .button button {
   outline: none;
-  color: #fff;
-  font-size: 25px;
-  font-weight: 500;
   padding: 8px 16px;
-  background: #4070f4;
-  border: 2px solid #4070f4;
   border-radius: 6px;
+  font-size: 25px;
+  font-weight: 400;
+  background: #4070f4;
+  color: #fff;
   cursor: pointer;
+  border: 2px solid transparent;
   transition: all 0.4s ease;
 }
 
 .home .button button:hover {
+  border-color: #4070f4;
+  background-color: #fff;
   color: #4070f4;
-  background: none;
 }
 
-/* ===== SECTIONS ===== */
-
+/* About Section Styling */
+/* Those Elements Where We Have Apply Same CSS,
+ I'm Selecting Directly 'Section Tag' and 'Class'  */
 section {
   padding-top: 40px;
 }
@@ -156,6 +204,12 @@ section .content {
   width: 80%;
   margin: 40px auto;
   font-family: 'Poppins', sans-serif;
+}
+
+.about .about-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 section .title {
@@ -176,44 +230,36 @@ section .title span::before,
 section .title span::after {
   content: '';
   position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
   height: 3px;
-  width: 70px;
+  width: 100%;
   background: #4070f4;
-  border-radius: 12px;
+  left: 0;
+  bottom: 0;
 }
 
 section .title span::after {
   bottom: -7px;
-  width: 35px;
-}
-
-/* ===== ABOUT ===== */
-
-.about .about-details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .about .about-details .left {
   width: 45%;
 }
 
-.about .about-details .left img {
+.about .left img {
   height: 400px;
   width: 400px;
   object-fit: cover;
   border-radius: 12px;
 }
 
-.about .about-details .right {
+.about-details .right {
   width: 55%;
 }
 
-.about-details .right .topic {
+section .topic {
   color: #0E2431;
   font-size: 25px;
   font-weight: 500;
@@ -221,44 +267,43 @@ section .title span::after {
 }
 
 .about-details .right p {
-  color: #0E2431;
   text-align: justify;
-  line-height: 1.7;
+  color: #0E2431;
 }
 
-.about-details .right .button {
-  margin-top: 20px;
+section .button {
+  margin: 16px 0;
 }
 
-.about-details .right .button button {
+section .button button {
   outline: none;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 500;
   padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 25px;
+  font-weight: 400;
   background: #4070f4;
-  border: 2px solid #4070f4;
-  border-radius: 6px;
+  color: #fff;
+  border: 2px solid transparent;
   cursor: pointer;
   transition: all 0.4s ease;
 }
 
-.about-details .right .button button:hover {
+section .button button:hover {
+  border-color: #4070f4;
+  background-color: #fff;
   color: #4070f4;
-  background: none;
 }
 
-/* ===== SKILLS ===== */
-
+/* My Skills CSS */
 .skills {
-  background: #f0f8ff;
+  background: #F0F8FF;
 }
 
 .skills .content {
   padding: 40px 0;
 }
 
-.skills-details {
+.skills .skills-details {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -268,27 +313,19 @@ section .title span::after {
   width: 50%;
 }
 
-.skills-details .topic {
-  color: #0E2431;
-  font-size: 25px;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
 .skills-details p {
   color: #0E2431;
   text-align: justify;
-  line-height: 1.7;
 }
 
-.skills-details .experience {
+.skills .skills-details .experience {
   display: flex;
   align-items: center;
   margin: 0 10px;
 }
 
 .skills-details .experience .num {
-  color: #4070f4;
+  color: #0E2431;
   font-size: 80px;
 }
 
@@ -297,6 +334,7 @@ section .title span::after {
   margin-left: 20px;
   font-size: 18px;
   font-weight: 500;
+  margin: 0 6px;
 }
 
 .skills-details .boxes {
@@ -306,7 +344,7 @@ section .title span::after {
   justify-content: space-between;
 }
 
-.skills-details .boxes .box {
+.skills-details .box {
   width: calc(100% / 2 - 20px);
   margin: 20px 0;
 }
@@ -321,8 +359,7 @@ section .title span::after {
   color: #4070f4;
 }
 
-/* ===== SERVICES ===== */
-
+/* My Services CSS */
 .services .boxes {
   display: flex;
   flex-wrap: wrap;
@@ -335,7 +372,7 @@ section .title span::after {
   text-align: center;
   border-radius: 12px;
   padding: 30px 10px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
   cursor: default;
   transition: all 0.4s ease;
 }
@@ -358,25 +395,25 @@ section .title span::after {
   transition: all 0.4s ease;
 }
 
-.services .boxes .box:hover .icon {
-  background: #fff;
+.boxes .box:hover .icon {
+  background-color: #fff;
   color: #4070f4;
 }
 
-.services .boxes .box .topic {
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 10px;
+.services .boxes .box:hover .topic,
+.services .boxes .box:hover p {
+  color: #0E2431;
+  transition: all 0.4s ease;
 }
 
-.services .boxes .box p {
-  line-height: 1.6;
+.services .boxes .box:hover .topic,
+.services .boxes .box:hover p {
+  color: #fff;
 }
 
-/* ===== CONTACT ===== */
-
+/* Contact Me CSS */
 .contact {
-  background: #f0f8ff;
+  background: #F0F8FF;
 }
 
 .contact .content {
@@ -390,19 +427,7 @@ section .title span::after {
   margin: auto;
 }
 
-.contact .topic {
-  color: #0E2431;
-  font-size: 25px;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-.contact p {
-  color: #0E2431;
-}
-
-/* ===== FOOTER ===== */
-
+/* Footer CSS */
 footer {
   background: #4070f4;
   padding: 15px 0;
@@ -418,15 +443,14 @@ footer .text span {
 
 footer .text span a {
   font-weight: 500;
-  color: #fff;
+  color: #FFF;
 }
 
 footer .text span a:hover {
   text-decoration: underline;
 }
 
-/* ===== SCROLL BUTTON ===== */
-
+/* Scroll TO Top Button CSS */
 .scroll-button a {
   position: fixed;
   bottom: 20px;
@@ -434,356 +458,139 @@ footer .text span a:hover {
   color: #fff;
   background: #4070f4;
   padding: 7px 12px;
+  ;
   font-size: 18px;
   border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 999;
+  box-shadow: rgba(0, 0, 0, 0.15);
+  display: none;
 }
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 750px) {
-
-  /* NAVBAR */
-
-  nav {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    padding: 18px 0 !important;
-    z-index: 9999 !important;
-    background: transparent;
+/* Responsive Media Query */
+@media (max-width: 1190px) {
+  section .content {
+    width: 85%;
   }
+}
 
-  nav .navbar {
-    width: 90% !important;
-    height: 45px !important;
-    margin: auto !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    position: relative !important;
-  }
-
-  /* PORTFOLIO LOGO */
-
-  nav .navbar .logo {
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    z-index: 10001 !important;
-  }
-
-  nav .navbar .logo a {
-    font-size: 34px !important;
-    font-weight: 600 !important;
-    color: #4070f4 !important;
-  }
-
-  /* SOCIAL ICONS */
-
-  nav .navbar .media-icons {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    position: absolute !important;
-    right: 48px !important;
-    top: 8px !important;
-
-    z-index: 10002 !important;
-  }
-
-  nav .navbar .media-icons a {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    width: 25px !important;
-    height: 25px !important;
-
-    margin: 0 3px !important;
-
-    color: #4070f4 !important;
-    font-size: 17px !important;
-
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  /* HAMBURGER */
-
-  nav .menu-btn {
-    display: block !important;
-
-    position: absolute !important;
-    right: 0 !important;
-    top: 5px !important;
-
-    color: #4070f4 !important;
-    font-size: 25px !important;
-
-    cursor: pointer !important;
-    z-index: 10004 !important;
-
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  /* MOBILE MENU */
-
-  nav .navbar .menu {
-    position: fixed !important;
-    left: -100% !important;
-    top: 0 !important;
-
-    width: 100% !important;
-    max-width: 400px !important;
-    height: 100vh !important;
-
-    background: #0E2431 !important;
-
-    padding-top: 90px !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-
-    transition: all 0.5s ease !important;
-
-    z-index: 10003 !important;
-  }
-
-  .navbar.active .menu {
-    left: 0 !important;
-  }
-
-  nav .navbar .menu li {
-    list-style: none !important;
-    margin: 15px 0 !important;
-  }
-
-  nav .navbar .menu li a {
-    display: block !important;
-    color: #fff !important;
-    font-size: 23px !important;
-  }
-
-  nav .navbar .menu .cancel-btn {
-    display: block !important;
-
-    position: absolute !important;
-    top: 20px !important;
-    right: 30px !important;
-
-    color: #fff !important;
-    font-size: 22px !important;
-
-    cursor: pointer !important;
-  }
-
-  /* HOME BACKGROUND
-     DO NOT CHANGE - THIS FIXES MOBILE IMAGE CROPPING
-  */
-
-  .home {
-    height: 100vh !important;
-    min-height: 100vh !important;
-
-    background-image: url("background.png") !important;
-    background-repeat: no-repeat !important;
-
-    background-size: auto 100% !important;
-    background-position: right center !important;
-
-    background-attachment: scroll !important;
-
-    position: relative !important;
-  }
-
-  /* HOME CONTENT */
-
-  .home .home-content {
-    width: 90% !important;
-    height: 100% !important;
-
-    margin: 0 auto !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-
-    padding-top: 150px !important;
-
-    transform: none !important;
-
-    position: relative !important;
-    z-index: 2 !important;
-  }
-
-  /* HELLO */
-
-  .home .text-one {
-    font-size: 22px !important;
-    margin-bottom: 8px !important;
-    line-height: 1.2 !important;
-  }
-
-  /* NAME */
-
-  .home .text-two {
-    font-size: 48px !important;
-    line-height: 1.12 !important;
-    margin-left: 0 !important;
-  }
-
-  /* JOB */
-
-  .home .text-three {
-    font-size: 28px !important;
-    line-height: 1.2 !important;
-    margin: 8px 0 !important;
-  }
-
-  /* LOCATION */
-
-  .home .text-four {
-    font-size: 21px !important;
-    line-height: 1.3 !important;
-    margin: 5px 0 !important;
-  }
-
-  /* HIRE BUTTON */
-
-  .home .button {
-    margin: 14px 0 !important;
-  }
-
-  .home .button button {
-    font-size: 20px !important;
-    padding: 8px 16px !important;
-  }
-
-  /* SKILLS */
-
-  .skills .skills-details {
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .skills-details .text {
-    width: 100% !important;
-    margin-bottom: 50px !important;
-  }
-
-  .skills-details .boxes {
-    width: 100% !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-
-  /* SERVICES */
-
-  .services .boxes .box {
-    width: 100% !important;
-    margin: 20px 0 !important;
-  }
-
-  /* CONTACT */
-
-  .contact .text {
-    width: 100% !important;
-  }
-
-  .skills-details .boxes .per {
-    font-size: 50px !important;
-  }
-
-  /* ABOUT */
-
+@media (max-width: 1000px) {
   .about .about-details {
-    flex-direction: column !important;
+    justify-content: center;
+    flex-direction: column;
   }
 
   .about .about-details .left {
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-    margin-bottom: 30px !important;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
-  .about .about-details .left img {
-    width: 100% !important;
-    max-width: 400px !important;
-    height: auto !important;
+  .about-details .right {
+    width: 90%;
+    margin: 40px 0;
   }
 
-  .about .about-details .right {
-    width: 100% !important;
-  }
-
-  section .content {
-    width: 90% !important;
+  .services .boxes .box {
+    margin: 20px 0;
+    width: calc(100% / 2 - 20px);
   }
 }
 
-/* =========================================================
-   SMALL PHONES
-   ========================================================= */
+@media (max-width: 900px) {
+  .about .left img {
+    height: 350px;
+    width: 350px;
+  }
+}
 
-@media (max-width: 400px) {
-
+@media (max-width: 750px) {
   nav .navbar {
-    width: 92% !important;
+    width: 90%;
   }
 
-  nav .navbar .logo a {
-    font-size: 30px !important;
+  nav .navbar .menu {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    background: #0E2431;
+    height: 100vh;
+    max-width: 400px;
+    width: 100%;
+    padding-top: 60px;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease;
+  }
+
+  .navbar.active .menu {
+    left: 0;
+  }
+
+  nav .navbar .menu a {
+    font-size: 23px;
+    display: block;
+    color: #fff;
+    margin: 15px 0;
+  }
+
+  nav.sticky .menu a:hover {
+    color: #4070f4;
   }
 
   nav .navbar .media-icons {
-    right: 43px !important;
-    top: 8px !important;
+    display: none;
   }
 
-  nav .navbar .media-icons a {
-    width: 21px !important;
-    height: 21px !important;
-    margin: 0 2px !important;
-    font-size: 15px !important;
-  }
-
-  nav .menu-btn {
-    right: 0 !important;
-    top: 6px !important;
-    font-size: 23px !important;
-  }
-
-  .home .home-content {
-    padding-top: 145px !important;
-  }
-
-  .home .text-one {
-    font-size: 20px !important;
+  nav .menu-btn,
+  .navbar .menu .cancel-btn {
+    display: block;
   }
 
   .home .text-two {
-    font-size: 43px !important;
+    font-size: 65px;
   }
 
   .home .text-three {
-    font-size: 25px !important;
+    font-size: 35px;
   }
 
-  .home .text-four {
-    font-size: 19px !important;
+  .skills .skills-details {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 
-  .home .button button {
-    font-size: 19px !important;
+  .skills-details .text {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .skills-details .boxes {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .services .boxes .box {
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  .contact .text {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .home .text-two {
+    font-size: 55px;
+  }
+
+  .home .text-three {
+    font-size: 33px;
+  }
+
+  .skills-details .boxes .per {
+    font-size: 50px;
+    color: #4070f4;
   }
 }
